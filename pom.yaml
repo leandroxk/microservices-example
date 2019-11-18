@@ -1,0 +1,40 @@
+modelEncoding: UTF-8
+modelVersion: 4.0.0
+groupId: org.leandroxk
+artifactId: java-codes
+version: 1.0-SNAPSHOT
+packaging: jar
+name: java-codes
+properties: {
+  maven.compiler.target: 11,
+  maven.compiler.source: 11,
+  project.build.sourceEncoding: UTF-8
+}
+
+dependencyManagement:
+  dependencies:
+  - {groupId: org.springframework.cloud, artifactId: spring-cloud-dependencies, version: Greenwich.RELEASE, type: pom, scope: import}
+  - {groupId: org.springframework.boot, artifactId: spring-boot-dependencies, version: 2.1.10.RELEASE, type: pom, scope: import}
+
+dependencies:
+- {groupId: org.slf4j, artifactId: slf4j-api, version: 1.7.29}
+- {groupId: junit, artifactId: junit, version: 4.11, scope: test}
+- {groupId: org.springframework.cloud, artifactId: spring-cloud-starter-kubernetes}
+- {groupId: org.springframework.cloud, artifactId: spring-cloud-commons}
+
+- {groupId: org.springframework.boot, artifactId: spring-boot-starter-web}
+- {groupId: org.springframework.boot, artifactId: spring-boot-starter-data-mongodb}
+- {groupId: org.springframework.data, artifactId: spring-data-commons}
+
+- {groupId: io.springfox, artifactId: springfox-swagger2, version: 2.9.2}
+
+build:
+  plugins:
+  - groupId: org.springframework.boot
+    artifactId: spring-boot-maven-plugin
+    executions:
+    - configuration: {classifier: spring-boot, mainClass: org.leandroxk.application.PokedexApplication}
+      goals: [repackage]
+      id: default
+      inherited: true
+      priority: 0
