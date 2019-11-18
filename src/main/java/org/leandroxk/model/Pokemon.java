@@ -6,15 +6,15 @@ public class Pokemon {
     private Integer number;
     private String name;
 
-    public Integer id() {
+    public Integer getId() {
         return id;
     }
 
-    public Integer number() {
+    public Integer getNumber() {
         return number;
     }
 
-    public String name() {
+    public String getName() {
         return name;
     }
 

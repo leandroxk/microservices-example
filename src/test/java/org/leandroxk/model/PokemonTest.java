@@ -13,8 +13,8 @@ public class PokemonTest {
 			.name("Bulbasauro")
 			.build();
 
-		assertEquals(Integer.valueOf(1000), pokemon.id());
-		assertEquals(Integer.valueOf(1), pokemon.number());
-		assertEquals("Bulbasauro", pokemon.name());
+		assertEquals(Integer.valueOf(1000), pokemon.getId());
+		assertEquals(Integer.valueOf(1), pokemon.getNumber());
+		assertEquals("Bulbasauro", pokemon.getName());
 	}
 }
