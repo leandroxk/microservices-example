@@ -1,6 +1,10 @@
 spring:
-  app:
-    name: pokedex
-  data:
-    mongodb:
-      uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb/${MONGO_DATABASE}
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:pokedex-mysqldb}:3306/pokedex
+    username: pokedex
+    password: pokedex
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
